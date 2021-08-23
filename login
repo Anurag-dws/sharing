@@ -27,6 +27,7 @@ module.exports = {
                     }
                 },
                 error: function (data) {
+                   
                     if (data.responseJSON.redirectUrl) {
                         window.location.href = data.responseJSON.redirectUrl;
                     } else {
@@ -54,19 +55,11 @@ module.exports = {
                 success: function (data) {
                     form.spinner().stop();
                     if (!data.success) {
-                        $('#successTost').hide();
-                        form.spinner().stop();
                         $('form.registration').trigger('login:register:error', data);
                         formValidation(form, data);
                     } else {
-               
                         $('form.registration').trigger('login:register:success', data);
-                        
-                        form.spinner().start();
-                        setTimeout(function(){
-                           location.href = data.redirectUrl;
-                        },2000)
-        
+                        location.href = data.redirectUrl;
                     }
                 },
                 error: function (err) {
@@ -88,6 +81,7 @@ module.exports = {
             var form = $(this);
             e.preventDefault();
             var url = form.attr('action');
+           
             form.spinner().start();
             $('.reset-password-form').trigger('login:register', e);
             $.ajax({
@@ -127,9 +121,7 @@ module.exports = {
     clearResetForm: function () {
         $('#login .modal').on('hidden.bs.modal', function () {
             $('#reset-password-email').val('');
-            $('.modal-dialog .validation-trigger .is-invalid').removeClass('is-invalid');
+            $('.modal-dialog .backendClass.is-invalid').removeClass('is-invalid');
         });
-    },
-
-    
+    }
 };
