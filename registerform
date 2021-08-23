@@ -1,0 +1,121 @@
+<form action="${pdict.createAccountUrl}" class="registration" method="POST" name="${pdict.profileForm.htmlName}">
+    <div class="cp-form">
+        <div class="input-wrap
+        <isif condition="${!!pdict.profileForm.customer.firstname.mandatory === true}">required</isif>">
+        <label for="registration-form-fname">
+            <isprint value="${pdict.profileForm.customer.firstname.label}" encoding="htmlcontent" />
+        </label>
+        <input
+            type="text"
+            class="inputDefault alpha backendClass"
+            placeholder="Enter your First Name" 
+            <isprint value=${pdict.profileForm.customer.firstname.attributes} encoding="off" /> />
+         <div class="error-wrap">
+                <span class="icon-info"></span>
+                <span class="error-text"></span>
+            </div>
+            <div class="invalid-feedback" id="form-fname-error"></div>
+    </div>
+       <div class="input-wrap">
+        <label  for="registration-form-lname ">
+            <isprint value="${pdict.profileForm.customer.lastname.label}" encoding="htmlcontent" />
+        </label>
+        <input
+            type="text"
+            class="inputDefault alpha backendClass"
+            <isprint value=${pdict.profileForm.customer.lastname.attributes} encoding="off" />
+            placeholder="Enter your Last Name" >
+       <div class="error-wrap">
+                <span class="icon-info"></span>
+                <span class="error-text"></span>
+            </div>
+             <div class="invalid-feedback" id="form-lname-error"></div>
+    </div>
+       
+ <div class="input-wrap">
+        <label  for="registration-form-phone">
+            <isprint value="${pdict.profileForm.customer.phone.label}" encoding="htmlcontent" />
+        </label>
+        <input
+            type="tel"
+            <isprint value=${pdict.profileForm.customer.phone.attributes} encoding="off" />
+              maxlength="10"
+            placeholder="Enter Phone Number"
+            class="inputDefault mobileNumber backendClass"  
+             >
+         <div class="error-wrap">
+                <span class="icon-info"></span>
+                <span class="error-text"></span>
+            </div>
+             <div class="invalid-feedback" id="form-phone-error"></div>
+    </div>
+        <div class="input-wrap  ">
+        <label  for="registration-form-email">
+             <isprint value="${pdict.profileForm.customer.email.label}" encoding="htmlcontent" />
+        </label>
+        <input
+            type="email"
+            class="inputDefault email backendClass"
+            <isprint value=${pdict.profileForm.customer.email.attributes} encoding="off" />
+            maxlength="50"
+            placeholder="Enter Email Address"
+            >
+            <div class="invalid-feedback" id="form-email-error"></div>
+        <div class="error-wrap error-messaging" >
+                <span class="icon-info"></span>
+                <span class="error-text"></span>
+            </div>
+              <div class="invalid-feedback" id="form-email-error"></div>
+    </div>
+        <div class="input-wrap
+        <isif condition="${!!pdict.profileForm.login.password.mandatory === true}">required</isif>">
+        <label  for="registration-form-password">
+            <isprint value="${pdict.profileForm.login.password.label}" encoding="htmlcontent" />
+        </label>
+        <input
+            type="password"
+            class="inputDefault new-password backendClass"
+            autocomplete="off"
+            <isprint value=${pdict.profileForm.login.password.attributes} encoding="off" />
+            maxlength="20" placeholder="Enter Password" />
+            <span class="icon icon-eye js-showPassword"></span>
+         <span class="extra-note">Password should have atleast one special character and number.</span>
+           
+            <div class="error-wrap">
+                <span class="icon-info"></span>
+                <span class="error-text"></span>
+            </div>
+             <div class="invalid-feedback" id="form-password-error"></div>
+    </div>
+       <div class="input-wrap
+        <isif condition="${!!pdict.profileForm.login.passwordconfirm.mandatory === true}">required</isif>">
+        <label for="registration-form-password-confirm">
+            <isprint value="${pdict.profileForm.login.passwordconfirm.label}" encoding="htmlcontent" />
+        </label>
+        <input
+            type="password"
+            class="inputDefault conf-password"
+            autocomplete="off"
+            <isprint value=${pdict.profileForm.login.passwordconfirm.attributes} encoding="off" />
+            maxlength="20" placeholder="Re-enter Password" />
+        <span class="icon icon-eye js-showPassword"></span>
+            <div class="error-wrap">
+                <span class="icon-info"></span>
+                <span class="error-text"></span>
+            </div>
+            <div class="invalid-feedback" id="form-password-confirm-error"></div>
+    </div>
+        <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}" />
+        <div class="input-wrap">
+            <div class="bs-checkbox">
+                <input id="option" type="checkbox" name="field" value="option" class="chk_tnc" <isprint
+                    value=${pdict.profileForm.customer.addtoemaillist.attributes} encoding="off" />
+                >
+                <label class="label-filed" for="option">I have read and accept the <a href="#" style="color:#F8673B"
+                        class="link">Terms &
+                        conditions</a></label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-default disabled">Create an Account</button>
+    </div>
+</form
