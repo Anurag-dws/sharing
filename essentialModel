@@ -1,0 +1,189 @@
+ <isif condition="${status.count===1}">
+                 <!-- Button trigger modal -->
+                <iscomment> <p> ${status.count}</p> </iscomment>
+                <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal1">
+                    <h4>${Resource.msg('label.set.contains', 'product', null)}</h4>
+                </button>
+ <!-- Modal 1-->
+                <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"><b>BEGINNERS' KIT</b> <br> INCLUSION</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+
+                                <isinclude template="product/components/mysetItems" />
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <isset name="product" value="${productCopy}" scope="page" />
+                                <div class="row cart-and-ipay">
+                                    <div class="col-sm-12">
+                                        <input type="hidden" class="add-to-cart-url" value="${pdict.addToCartUrl}">
+                                        <button data-dismiss="modal" essential="${true}"
+                                            class="${product.id} add-to-cart-global btn btn-primary"
+                                            data-pid="${product.id}" ${!product.readyToOrder || !product.available ? "disabled" : ""}>
+                                            <i class="fa fa-shopping-bag"></i>
+                                            <isif
+                                                condition="${product.productType === 'set' || product.productType === 'bundle'}">
+                                                ${Resource.msg('button.addalltocart', 'common', null)}
+                                                <iselse>
+                                                    ${Resource.msg('button.addtocart', 'common', null)}
+                                            </isif>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<iselseif condition="${status.count===2}" >
+                <!-- Button trigger modal -->
+                <iscomment> <p> ${status.count}</p> </iscomment>
+                <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal2">
+                    <h4>${Resource.msg('label.set.contains', 'product', null)}</h4>
+                </button>
+ <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"><b>BEGINNERS' KIT</b> <br> INCLUSION</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+
+                                <isinclude template="product/components/mysetItems" />
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <isset name="product" value="${productCopy}" scope="page" />
+                                <div class="row cart-and-ipay">
+                                    <div class="col-sm-12">
+                                        <input type="hidden" class="add-to-cart-url" value="${pdict.addToCartUrl}">
+                                        <button data-dismiss="modal" essential="${true}"
+                                            class="${product.id} add-to-cart-global btn btn-primary"
+                                            data-pid="${product.id}" ${!product.readyToOrder || !product.available ? "disabled" : ""}>
+                                            <i class="fa fa-shopping-bag"></i>
+                                            <isif
+                                                condition="${product.productType === 'set' || product.productType === 'bundle'}">
+                                                ${Resource.msg('button.addalltocart', 'common', null)}
+                                                <iselse>
+                                                    ${Resource.msg('button.addtocart', 'common', null)}
+                                            </isif>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</iselseif>
+<iselseif condition="${status.count===3}" >
+                <!-- Button trigger modal -->
+                <iscomment> <p> ${status.count}</p> </iscomment>
+                <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal3">
+                    <h4>${Resource.msg('label.set.contains', 'product', null)}</h4>
+                </button>
+ <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"><b>BEGINNERS' KIT</b> <br> INCLUSION</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+
+                                <isinclude template="product/components/mysetItems" />
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <isset name="product" value="${productCopy}" scope="page" />
+                                <div class="row cart-and-ipay">
+                                    <div class="col-sm-12">
+                                        <input type="hidden" class="add-to-cart-url" value="${pdict.addToCartUrl}">
+                                        <button data-dismiss="modal" essential="${true}"
+                                            class="${product.id} add-to-cart-global btn btn-primary"
+                                            data-pid="${product.id}" ${!product.readyToOrder || !product.available ? "disabled" : ""}>
+                                            <i class="fa fa-shopping-bag"></i>
+                                            <isif
+                                                condition="${product.productType === 'set' || product.productType === 'bundle'}">
+                                                ${Resource.msg('button.addalltocart', 'common', null)}
+                                                <iselse>
+                                                    ${Resource.msg('button.addtocart', 'common', null)}
+                                            </isif>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</iselseif>
+<iselseif condition="${status.count===4}" >
+                <!-- Button trigger modal -->
+                <iscomment> <p> ${status.count}</p> </iscomment>
+                <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModal4">
+                    <h4>${Resource.msg('label.set.contains', 'product', null)}</h4>
+                </button>
+ <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"><b>BEGINNERS' KIT</b> <br> INCLUSION</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+
+                                <isinclude template="product/components/mysetItems" />
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <isset name="product" value="${productCopy}" scope="page" />
+                                <div class="row cart-and-ipay">
+                                    <div class="col-sm-12">
+                                        <input type="hidden" class="add-to-cart-url" value="${pdict.addToCartUrl}">
+                                        <button data-dismiss="modal" essential="${true}"
+                                            class="${product.id} add-to-cart-global btn btn-primary"
+                                            data-pid="${product.id}" ${!product.readyToOrder || !product.available ? "disabled" : ""}>
+                                            <i class="fa fa-shopping-bag"></i>
+                                            <isif
+                                                condition="${product.productType === 'set' || product.productType === 'bundle'}">
+                                                ${Resource.msg('button.addalltocart', 'common', null)}
+                                                <iselse>
+                                                    ${Resource.msg('button.addtocart', 'common', null)}
+                                            </isif>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</iselseif>
+ </isif>
